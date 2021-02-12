@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{{data.title}}<br>
+{{data.description}}<br>
+{{data.other_details}}<br>
+{{data.number_of_people}}<br>
+<img src="/media/{{data.image}}">
+<img src="/media/{{data.feature_image}}">
+<br>
+<select>
+    {% for titles in data2 %}
+        <option value="{{titles}}">{{titles}}</option>
+        <script>
+            $(document).ready(function(){
+                $(".select").click(function(){
+                    $.ajax({
+                url:'',
+                type:'get',
+                data:{
+                    datas:$(this).val()
+                },
+                success:function(response){
+                    console.log(response)
+                }
+
+                });
+
+            });
+        });
+</script>
+
+    {% endfor %}
+</select>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
